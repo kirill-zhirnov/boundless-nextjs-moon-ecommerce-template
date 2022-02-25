@@ -1,0 +1,42 @@
+.page-header {
+	$phones-min-height: 3rem;
+	$phones-row-color: #333;
+
+	&__phones-row {
+		background: #f8f8f8;
+		color: $phones-row-color;
+		font-weight: $front-font-weight-light;
+		min-height: $phones-min-height;
+	}
+
+	&__phones-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: relative;
+
+		@include media-breakpoint-up(md) {
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+			min-height: $phones-min-height;
+		}
+	}
+
+	&__phone-link {
+		color: $phones-row-color;
+		display: inline-block;
+		margin: 0.25rem 0.75rem;
+		text-decoration: none;
+
+		&:hover {
+			color: $theme-color;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+	}
+}

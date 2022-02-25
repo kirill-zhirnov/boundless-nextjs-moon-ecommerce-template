@@ -1,0 +1,109 @@
+.page-header {
+	&__logo-container {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		min-height: 7.5rem;
+		position: relative;
+
+		@include media-breakpoint-up(md) {
+			justify-content: center;
+			min-height: 10.5rem;
+		}
+	}
+
+	&__logo-wrapper {
+		margin: 0.9rem 0;
+	}
+
+	&__logo-link {
+		color: #0c0000;
+		display: inline-block;
+		text-decoration: none;
+
+		@include media-breakpoint-up(sm) {
+			span {
+				font-size: 2.1875rem;
+			}
+
+			img {
+				max-height: 6.25rem;
+				max-width: 18.75rem;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			img {
+				max-height: 8.75rem;
+				max-width: 25rem;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			img {
+				max-height: 12.5rem;
+				max-width: 36.25rem;
+			}
+		}
+
+		&:hover {
+			color: #0c0000;
+			text-decoration: none;
+		}
+
+		span {
+			display: inline-block;
+			font-family: 'Playfair Display SC', serif;
+			font-size: 30px;
+			text-transform: uppercase;
+		}
+
+		img {
+			display: inline-block;
+			max-height: 6.25rem;
+
+			max-width: 11.25rem;
+		}
+	}
+
+	&__right-blocks {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@include media-breakpoint-up(sm) {
+			align-items: flex-start;
+			flex-direction: row;
+			justify-content: flex-start;
+		}
+
+		@include media-breakpoint-up(md) {
+			margin-top: -16px;
+			position: absolute;
+			right: 0.75rem;
+			top: 50%;
+		}
+	}
+
+	&__hamburger-btn {
+		margin-left: 1rem;
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+
+	&__moon-cart {
+		padding: 11px 18px 0 0;
+
+		.cart-header__total {
+			display: none;
+		}
+
+		.cart-header__qty {
+			font-weight: 400;
+		}
+	}
+}

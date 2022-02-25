@@ -1,5 +1,7 @@
 @import '~bootstrap';
+
+$theme-color: #fb3d50;
+$front-text-color: #333;
+
 @import 'components/index';
-
-@import 'themes/sample/basic';
-
+@import 'themes/moon/index';
