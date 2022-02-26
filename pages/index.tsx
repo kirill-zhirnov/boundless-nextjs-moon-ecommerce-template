@@ -4,22 +4,14 @@ import ProductsList from '../components/ProductsList';
 import MainLayout from '../layouts/Main';
 import {apiClient} from '../lib/api';
 import {makeAllMenus} from '../lib/menu';
-import VerticalMenu from '../components/VerticalMenu';
 import {IMenuItem} from '../@types/components';
 
 export default function IndexPage({products, mainMenu, footerMenu}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	return (
 		<MainLayout mainMenu={mainMenu} footerMenu={footerMenu}>
 			<div className='container'>
-				<div className='row'>
-					<nav className='col-md-3 col-sm-4'>
-						{mainMenu && <VerticalMenu menuList={mainMenu} />}
-					</nav>
-					<div className='col-md-9 col-sm-8'>
-						<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Boundless store</h1>
-						<ProductsList products={products} query={{}}/>
-					</div>
-				</div>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Boundless store</h1>
+				<ProductsList products={products} query={{}}/>
 			</div>
 		</MainLayout>
 	);

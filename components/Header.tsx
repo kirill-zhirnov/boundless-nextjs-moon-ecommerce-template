@@ -2,16 +2,18 @@ import {MouseEvent} from 'react';
 import Link from 'next/link';
 import HeaderCart from './cart/HeaderCart';
 import ChooseVariantModal from './header/ChooseVariantModal';
-import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
-import {useAppDispatch} from '../hooks/redux';
+// import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
+import {useAppDispatch, useAppSelector} from '../hooks/redux';
 import {setIsOpened} from '../redux/reducers/asideMenu';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPhoneAlt} from '@fortawesome/free-solid-svg-icons/faPhoneAlt';
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons/faWhatsapp';
+import {RootState} from '../redux/store';
+import clsx from 'clsx';
 
 export default function Header() {
 	const dispatch = useAppDispatch();
-
+	const asideIsOpened = useAppSelector((state: RootState) => state.asideMenu.isOpened);
 	const onHamburgerBtnClicked = (e: MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 		dispatch(setIsOpened(true));
@@ -54,10 +56,12 @@ export default function Header() {
 					<div className={'page-header__right-blocks'}>
 						<HeaderCart className={'page-header__moon-cart'} />
 						<button type={'button'}
-										className={'btn btn-outline-secondary page-header__hamburger-btn'}
+										className={'hamburger-btn page-header__hamburger'}
 										onClick={onHamburgerBtnClicked}
 						>
-							<FontAwesomeIcon icon={faBars} />
+							<span className={clsx('hamburger-btn__bar', {'first-opened': asideIsOpened})} />
+							<span className={clsx('hamburger-btn__bar', {'middle-opened': asideIsOpened})} />
+							<span className={clsx('hamburger-btn__bar', {'last-opened': asideIsOpened})} />
 						</button>
 					</div>
 				</div>

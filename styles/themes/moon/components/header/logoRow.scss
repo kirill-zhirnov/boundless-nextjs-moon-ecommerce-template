@@ -11,6 +11,18 @@
 			justify-content: center;
 			min-height: 10.5rem;
 		}
+
+		@include media-breakpoint-down(md) {
+			&::after {
+				border-bottom: $horizontal-menu-border;
+				bottom: 0;
+				content: '';
+				display: block;
+				left: 0.75rem;
+				position: absolute;
+				right: 0.75rem;
+			}
+		}
 	}
 
 	&__logo-wrapper {
@@ -68,27 +80,27 @@
 	}
 
 	&__right-blocks {
-		align-items: flex-end;
+		align-items: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 
 		@include media-breakpoint-up(sm) {
-			align-items: flex-start;
+			align-items: center;
 			flex-direction: row;
 			justify-content: flex-start;
 		}
 
 		@include media-breakpoint-up(md) {
-			margin-top: -16px;
+			margin-top: -1.6875rem;
 			position: absolute;
 			right: 0.75rem;
 			top: 50%;
 		}
 	}
 
-	&__hamburger-btn {
-		margin-left: 1rem;
+	&__hamburger {
+		margin: 0.5rem;
 
 		@include media-breakpoint-up(md) {
 			display: none;
@@ -96,7 +108,12 @@
 	}
 
 	&__moon-cart {
+		margin-left: 1rem;
 		padding: 11px 18px 0 0;
+
+		@include media-breakpoint-up(sm) {
+			margin: 0.5rem;
+		}
 
 		.cart-header__total {
 			display: none;

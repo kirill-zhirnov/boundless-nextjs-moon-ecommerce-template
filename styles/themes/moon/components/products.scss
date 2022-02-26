@@ -1,0 +1,47 @@
+.moon-theme {
+	.products {
+		&__item {
+			border-color: transparent;
+			border-radius: 0;
+			overflow: hidden;
+
+			&:hover {
+				box-shadow: none;
+
+				.products__title {
+					visibility: hidden;
+				}
+
+				.products__offer {
+					visibility: hidden;
+				}
+
+				.products__to-cart {
+					bottom: 20px;
+					visibility: visible;
+				}
+			}
+		}
+
+		&__title {
+			font-weight: 300;
+		}
+
+		&__price {
+			.current {
+				font-weight: 400;
+			}
+		}
+
+		&__to-cart {
+			position: absolute;
+			bottom: -30px;
+			left: 0;
+			right: 0;
+
+			transition: all 0.3s;
+			visibility: hidden;
+			text-align: center;
+		}
+	}
+}

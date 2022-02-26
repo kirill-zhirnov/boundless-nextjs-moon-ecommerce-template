@@ -1,3 +1,10 @@
 @import './header/logoRow';
 @import './header/phonesRow';
 
+.moon-theme {
+	.horizontal-menu {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+}
