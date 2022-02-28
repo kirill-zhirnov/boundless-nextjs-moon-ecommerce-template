@@ -8,17 +8,19 @@
 			&:hover {
 				box-shadow: none;
 
-				.products__title {
-					visibility: hidden;
-				}
+				@include media-breakpoint-up(md) {
+					.products__title {
+						visibility: hidden;
+					}
 
-				.products__offer {
-					visibility: hidden;
-				}
+					.products__offer {
+						visibility: hidden;
+					}
 
-				.products__to-cart {
-					bottom: 20px;
-					visibility: visible;
+					.products__to-cart {
+						bottom: 20px;
+						visibility: visible;
+					}
 				}
 			}
 		}
@@ -34,14 +36,14 @@
 		}
 
 		&__to-cart {
-			position: absolute;
 			bottom: -30px;
 			left: 0;
+			position: absolute;
 			right: 0;
+			text-align: center;
 
 			transition: all 0.3s;
 			visibility: hidden;
-			text-align: center;
 		}
 	}
 }
