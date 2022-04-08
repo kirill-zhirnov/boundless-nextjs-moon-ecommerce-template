@@ -15,7 +15,7 @@ import {IMenuItem} from '../@types/components';
 
 const shopBaseUrl = process.env.BOUNDLESS_BASE_URL || '';
 
-export default function MainLayout({children, title, metaData, mainMenu, footerMenu}: IMainLayoutProps) {
+export default function MainLayout({children, title, metaData, mainMenu, footerMenu, noIndex}: IMainLayoutProps) {
 	const {canonicalUrl, imgUrl, description} = metaData || {};
 	const asideIsOpened = useAppSelector((state: RootState) => state.asideMenu.isOpened);
 
@@ -43,12 +43,14 @@ export default function MainLayout({children, title, metaData, mainMenu, footerM
 
 				<title>{title || 'Boundless-Commerce Shop Example'}</title>
 
-				<link rel='preconnect' href={process.env.BOUNDLESS_API_BASE_URL || 'https://v1.api.boundless-commerce.com'} crossOrigin={'crossOrigin'} />
+				<link rel='preconnect' href={process.env.BOUNDLESS_API_BASE_URL || 'https://api.boundless-commerce.com'} crossOrigin={'crossOrigin'} />
 
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin={'crossOrigin'} />
 				<link href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap' rel='stylesheet' />
 				<link href='https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap' rel='stylesheet' />
+
+				{noIndex && <meta name='robots' content='noindex' />}
 			</Head>
 			<AlertWidget />
 			<div className={clsx('page-layout page-layout_main moon-theme', {'page-layout_aside-opened': asideIsOpened})}>
@@ -72,6 +74,7 @@ interface IMainLayoutProps {
 	metaData?: IMetaData;
 	mainMenu: IMenuItem [];
 	footerMenu: IMenuItem [];
+	noIndex?: boolean;
 }
 
 interface IMetaData {
