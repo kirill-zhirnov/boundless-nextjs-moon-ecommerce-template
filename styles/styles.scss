@@ -14,5 +14,9 @@ $btn-action-border: #000;
 
 $products-gutter: 15px;
 
+@import 'functions/stripUnits';
+@import 'mixins/swiperSlideHeight';
+@import 'mixins/fluidType';
+
 @import 'components/index';
 @import 'themes/moon/index';
