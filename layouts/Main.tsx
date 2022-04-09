@@ -15,7 +15,7 @@ import {IMenuItem} from '../@types/components';
 
 const shopBaseUrl = process.env.BOUNDLESS_BASE_URL || '';
 
-export default function MainLayout({children, title, metaData, mainMenu, footerMenu, noIndex}: IMainLayoutProps) {
+export default function MainLayout({children, title, metaData, mainMenu, footerMenu, noIndex, classes}: IMainLayoutProps) {
 	const {canonicalUrl, imgUrl, description} = metaData || {};
 	const asideIsOpened = useAppSelector((state: RootState) => state.asideMenu.isOpened);
 
@@ -53,11 +53,11 @@ export default function MainLayout({children, title, metaData, mainMenu, footerM
 				{noIndex && <meta name='robots' content='noindex' />}
 			</Head>
 			<AlertWidget />
-			<div className={clsx('page-layout page-layout_main moon-theme', {'page-layout_aside-opened': asideIsOpened})}>
+			<div className={clsx('page-layout page-layout_main moon-theme', {'page-layout_aside-opened': asideIsOpened}, classes?.pageLayout)}>
 				<CallToOrder />
 				<Header />
 				{mainMenu && <HorizontalMenu menuList={mainMenu} />}
-				<main className='page-layout__main'>
+				<main className={clsx('page-layout__main', classes?.layoutMain)}>
 					{children}
 				</main>
 				<Footer menuList={footerMenu}/>
@@ -75,6 +75,10 @@ interface IMainLayoutProps {
 	mainMenu: IMenuItem [];
 	footerMenu: IMenuItem [];
 	noIndex?: boolean;
+	classes?: {
+		pageLayout?: string|string[];
+		layoutMain?: string|string[];
+	};
 }
 
 interface IMetaData {

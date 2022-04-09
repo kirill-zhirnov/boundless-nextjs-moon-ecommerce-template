@@ -1,6 +1,6 @@
-# Next.js eCommerce starter theme (blank)
+# The Moon: Next.js Ecommerce template
 
-Ready to use [Next.js](https://nextjs.org) (TypeScript) starter kit for high-performance 
+Ready to use [Next.js](https://nextjs.org) (TypeScript) free template to create  high-performance 
 e-commerce websites.
 
 ## About Boundless Commerce
