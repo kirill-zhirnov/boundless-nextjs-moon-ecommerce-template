@@ -36,10 +36,14 @@ export default function Header() {
 					</div>
 					<ul className='page-header__menu list-unstyled'>
 						<li>
-							<a href={'/shipping'} className='page-header__phone-link'>Shipping</a>
+							<Link href={'/shipping'}>
+								<a className='page-header__phone-link'>Shipping</a>
+							</Link>
 						</li>
 						<li>
-							<a href={'/about'} className='page-header__phone-link'>About</a>
+							<Link href={'/about'}>
+								<a className='page-header__phone-link'>About</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
