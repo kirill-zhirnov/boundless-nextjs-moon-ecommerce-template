@@ -5,7 +5,7 @@ e-commerce websites.
 
 ## Online Demo
 
-[moon.demos.boundless-commerce.com](https://moon.demos.boundless-commerce.com/) - deployed to Netlify.
+[moon.demos.my-boundless.app](https://moon.demos.my-boundless.app/) - deployed to Netlify.
 
 ## About Boundless Commerce
 
