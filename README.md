@@ -3,24 +3,36 @@
 Ready to use [Next.js](https://nextjs.org) (TypeScript) free template to create  high-performance 
 e-commerce websites.
 
+Free 👍. Ready to use 😎. Just clone & deploy! 🤘
+
 ## Online Demo
 
 [moon.demos.my-boundless.app](https://moon.demos.my-boundless.app/) - deployed to Netlify.
 
 ## About Boundless Commerce
 
+![Boundless-commerce.com](assets/logo.svg)
+
 [Boundless-commerce.com](https://boundless-commerce.com/) - API’s First Headless E-commerce CMS: We Provide An 
 Admin-Side For Store Management, Powerful API, And Ready-To-Use Checkout Area.
 
 ## Getting Started
 
-1. Install dependencies: `yarn install`
-2. Generate a permanent token in the Boundless-commerce control panel.
+1. Go to [Boundless-commerce.com](https://boundless-commerce.com/) and create a free account (no credit card required).
+2. Go to "Control panel" -> "Settings" -> "Access tokens" and create a new one:
+
+![](assets/settings-menu.png)
+![](assets/create-access-token-btn.png)
+
 3. Copy `.env.example` to `.env`
-4. Modify `.env`: put values for the `BOUNDLESS_API_PERMANENT_TOKEN` and `BOUNDLESS_INSTANCE_ID`.
-5. `yarn dev` - to start locally, then open `http://localhost:3000`
-6. If you want to have absolute URLs in the sitemap.xml and OpenGraph meta tags 
-you need to also specify `BOUNDLESS_BASE_URL`.
+4. Modify `.env`: put values for the `BOUNDLESS_API_PERMANENT_TOKEN` and `BOUNDLESS_INSTANCE_ID`, copy values from:
+
+![](assets/copy-credentials.png)
+
+5. Install dependencies: `yarn install`
+6. `yarn dev` - to start locally, then open `http://localhost:3000`
+7. If you want to have absolute URLs in the sitemap.xml and OpenGraph meta tags
+   you need to also specify `BOUNDLESS_BASE_URL`.
 
 ### Optional parameters
 
