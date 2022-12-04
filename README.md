@@ -1,4 +1,4 @@
-# The Moon: Next.js Ecommerce template
+# The Moon: Next.js E-commerce template - free!
 
 Ready to use [Next.js](https://nextjs.org) (TypeScript) free template to create  high-performance 
 e-commerce websites.
@@ -43,10 +43,10 @@ the same size. Possible values are: `1-1`, `2-3`, `3-2`,`4-5`, `5-4`, `3-4`, `4-
 
 ## What is included?
 
-Fully ready eCommerce website with a hierarchical catalog, product widgets, 
+Fully ready E-Commerce website with a hierarchical catalog, product widgets, 
 filters, and marketing components like sliders and carousels.
 
-We developed the theme keeping SEO in mind: schema markup, sitemap, and 
+We developed the template keeping SEO in mind: schema markup, sitemap, and 
 all necessary meta-tags.
 
 Shopping cart with a nice animated widget and [Fully customizable React checkout](https://github.com/kirill-zhirnov/boundless-checkout-react).
