@@ -5,7 +5,7 @@ import MainLayout from '../layouts/Main';
 import {apiClient} from '../lib/api';
 import {makeAllMenus} from '../lib/menu';
 import {IMenuItem} from '../@types/components';
-import bgImg from '../assets/cover-bg.jpeg';
+import bgImg from '../assets/tools-background.jpg';
 import bgPortraitImg from '../assets/cover-bg-portrait.jpg';
 import CoverTextInCenter from '../components/CoverTextInCenter';
 import ProductsSliderByQuery from '../components/ProductsSliderByQuery';
@@ -18,9 +18,9 @@ export default function IndexPage({products, mainMenu, footerMenu}: InferGetServ
 				img={bgImg.src}
 				imgPortrait={bgPortraitImg.src}
 				content={{
-					intro: 'Muhammad Ali',
-					head: 'Impossible is nothing!',
-					subHead: 'Impossible is not a fact. It’s an opinion. Impossible is not a declaration. It’s a dare. Impossible is potential. Impossible is temporary.'
+					intro: 'Proveedoras Electricas',
+					head: '¡Realiza el trabajo correctamente con nuestras herramientas!',
+					subHead: 'Únete a nosotros'
 				}}
 				shadow={{
 					opacity: 0.5,
@@ -29,9 +29,9 @@ export default function IndexPage({products, mainMenu, footerMenu}: InferGetServ
 				link={'https://google.com'}
 			/>
 			<div className='container'>
-				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Boundless store</h1>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Nuestros Productos</h1>
 				<ProductsList products={products} query={{}}/>
-				<h2 className='page-heading page-heading_h1  page-heading_m-h1'>Products carousel:</h2>
+				<h2 className='page-heading page-heading_h1  page-heading_m-h1'>Carrusel de productos:</h2>
 				<ProductsSliderByQuery
 					query={{collection: ['main-page'], sort: 'in_collection'}}
 					wrapperClassName='page-block'

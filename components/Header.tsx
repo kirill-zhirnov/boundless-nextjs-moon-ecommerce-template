@@ -1,8 +1,9 @@
 import {MouseEvent} from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import HeaderCart from './cart/HeaderCart';
 import ChooseVariantModal from './header/ChooseVariantModal';
-// import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
+import { contactInfo, CONTACT } from '../definations/contactInfo';
 import {useAppDispatch, useAppSelector} from '../hooks/redux';
 import {setIsOpened} from '../redux/reducers/asideMenu';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -10,6 +11,8 @@ import {faPhoneAlt} from '@fortawesome/free-solid-svg-icons/faPhoneAlt';
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons/faWhatsapp';
 import {RootState} from '../redux/store';
 import clsx from 'clsx';
+import peLogo from '../assets/pe-logo.png';
+import { logoData } from '../definations/ui';
 
 export default function Header() {
 	const dispatch = useAppDispatch();
@@ -25,13 +28,13 @@ export default function Header() {
 				<div className='container page-header__phones-container'>
 					<div className='page-header__phones'>
 						<a href={'tel:+1(123)1234567'} className='page-header__phone-link'>
-							<FontAwesomeIcon icon={faPhoneAlt} /> +1 (123) 123-45-67
+							<FontAwesomeIcon icon={faPhoneAlt} /> {CONTACT}
 						</a>
-						<a href={'https://api.whatsapp.com/send?phone=11231234567&text=Hello!'}
+						<a href={contactInfo.whatsAppLink}
 							 className='page-header__phone-link'
 							 target={'_blank'}
 						>
-							<FontAwesomeIcon icon={faWhatsapp} /> +1 (123) 123-45-67
+							<FontAwesomeIcon icon={faWhatsapp} /> {CONTACT}
 						</a>
 					</div>
 					<ul className='page-header__menu list-unstyled'>
@@ -53,7 +56,7 @@ export default function Header() {
 					<div className={'page-header__logo-wrapper'}>
 						<Link href='/'>
 							<a className={'page-header__logo-link'}>
-								<span>THE MOON</span>
+                <Image src={peLogo} width={logoData.width} height={logoData.height} />
 							</a>
 						</Link>
 					</div>
