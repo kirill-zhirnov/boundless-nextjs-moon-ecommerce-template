@@ -3,10 +3,15 @@ import MainLayout from '../layouts/Main';
 import {GetServerSideProps} from 'next';
 import {apiClient} from '../lib/api';
 import {makeAllMenus} from '../lib/menu';
+import {IBasicSettings} from '../@types/settings';
 
-export default function AboutPage({mainMenu, footerMenu}: IAboutPageProps) {
+export default function AboutPage({mainMenu, footerMenu, basicSettings}: IAboutPageProps) {
 	return (
-		<MainLayout mainMenu={mainMenu} footerMenu={footerMenu}>
+		<MainLayout
+			mainMenu={mainMenu}
+			footerMenu={footerMenu}
+			basicSettings={basicSettings}
+		>
 			<div className='container'>
 				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>About us</h1>
 				<h2>What is Lorem Ipsum?</h2>
@@ -31,11 +36,13 @@ export default function AboutPage({mainMenu, footerMenu}: IAboutPageProps) {
 export const getServerSideProps: GetServerSideProps<IAboutPageProps> = async () => {
 	const categoryTree = await apiClient.catalog.getCategoryTree({menu: 'category'});
 	const {mainMenu, footerMenu} = makeAllMenus({categoryTree});
+	const basicSettings = await apiClient.system.fetchSettings(['system.locale', 'system.currency']) as IBasicSettings;
 
 	return {
 		props: {
 			mainMenu,
-			footerMenu
+			footerMenu,
+			basicSettings
 		}
 	};
 };
@@ -43,4 +50,5 @@ export const getServerSideProps: GetServerSideProps<IAboutPageProps> = async () 
 interface IAboutPageProps {
 	mainMenu: IMenuItem[];
 	footerMenu: IMenuItem[];
+	basicSettings: IBasicSettings;
 }

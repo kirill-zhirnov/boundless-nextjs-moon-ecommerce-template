@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import {ReactNode} from 'react';
+import {ReactNode, useEffect} from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -12,12 +12,22 @@ import AsideBackdrop from '../components/asideMenu/Backdrop';
 import HorizontalMenu from '../components/HorizontalMenu';
 import CallToOrder from '../components/header/CallToOrder';
 import {IMenuItem} from '../@types/components';
+import {IBasicSettings} from '../@types/settings';
+import {useDispatch} from 'react-redux';
+import {setBasicSettings} from '../redux/reducers/app';
 
 const shopBaseUrl = process.env.BOUNDLESS_BASE_URL || '';
 
-export default function MainLayout({children, title, metaData, mainMenu, footerMenu, noIndex, classes}: IMainLayoutProps) {
+export default function MainLayout({children, title, metaData, mainMenu, footerMenu, noIndex, classes, basicSettings}: IMainLayoutProps) {
+	const dispatch = useDispatch();
 	const {canonicalUrl, imgUrl, description} = metaData || {};
 	const asideIsOpened = useAppSelector((state: RootState) => state.asideMenu.isOpened);
+
+	useEffect(() => {
+		if (basicSettings) {
+			dispatch(setBasicSettings(basicSettings));
+		}
+	}, [dispatch, basicSettings]);
 
 	return (
 		<>
@@ -79,6 +89,7 @@ interface IMainLayoutProps {
 		pageLayout?: string|string[];
 		layoutMain?: string|string[];
 	};
+	basicSettings?: IBasicSettings
 }
 
 interface IMetaData {
