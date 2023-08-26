@@ -1,6 +1,6 @@
 {
   "name": "boundless-moon-theme",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The Moon: Next.js Ecommerce template.",
   "keywords": [
     "boundless",
@@ -87,8 +87,8 @@
     "stylelint-config-standard": "^24.0.0",
     "ts-node": "^10.4.0"
   },
-	"engines": {
-		"node": ">=16.8",
-		"yarn": ">=1.x"
-	}
+  "engines": {
+    "node": ">=16.8",
+    "yarn": ">=1.x"
+  }
 }
