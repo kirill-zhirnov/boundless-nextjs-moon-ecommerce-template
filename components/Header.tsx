@@ -36,13 +36,13 @@ export default function Header() {
 					</div>
 					<ul className='page-header__menu list-unstyled'>
 						<li>
-							<Link href={'/shipping'}>
-								<a className='page-header__phone-link'>Shipping</a>
+							<Link href={'/shipping'} className='page-header__phone-link'>
+								Shipping
 							</Link>
 						</li>
 						<li>
-							<Link href={'/about'}>
-								<a className='page-header__phone-link'>About</a>
+							<Link href={'/about'} className='page-header__phone-link'>
+								About
 							</Link>
 						</li>
 					</ul>
@@ -51,10 +51,8 @@ export default function Header() {
 			<div className={'page-header__logo-row'}>
 				<div className='container page-header__logo-container'>
 					<div className={'page-header__logo-wrapper'}>
-						<Link href='/'>
-							<a className={'page-header__logo-link'}>
-								<span>THE MOON</span>
-							</a>
+						<Link href='/' className={'page-header__logo-link'}>
+							<span>THE MOON</span>
 						</Link>
 					</div>
 					<div className={'page-header__right-blocks'}>
